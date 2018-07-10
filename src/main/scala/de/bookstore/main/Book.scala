@@ -15,6 +15,14 @@ class Book (val title: String, author: String, var isbn10: Long) extends Export 
   def exportCSV: String = {
     title + ";" + author + ";" + this.isbn10
   }
+
+  def toXml = {
+    <book>
+      <title>{title}</title>
+      <author>{author}</author>
+      <isbn10>{isbn10}</isbn10>
+    </book>
+  }
 }
 
 object Book {
@@ -30,4 +38,13 @@ object Book {
 
     (s % 11) == digits(9).asDigit
   }
+
+  def fromXml(node: scala.xml.Node): Book = {
+    val title = (node \ "title").text
+    val author = (node \ "author").text
+    val isbn10 = (node \ "isbn10").text.toLong
+    new Book(title, author, isbn10)
+  }
+
+  def unapply(book: Book) = Some(book.title, book.isbn10)
 }
