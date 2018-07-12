@@ -46,5 +46,9 @@ object Book {
     new Book(title, author, isbn10)
   }
 
+  def fromCSV(line: Array[String]): Book = {
+    new Book(line(0), line(1), line(2).toLong)
+  }
+
   def unapply(book: Book) = Some(book.title, book.isbn10)
 }
