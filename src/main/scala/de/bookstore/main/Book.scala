@@ -1,6 +1,6 @@
 package de.bookstore.main
 
-class Book (val title: String, author: String, var isbn10: Long) extends Export {
+class Book (val title: String, author: String, var isbn10: Long, var quantity: Int = 1) extends Export {
   def this(title: String) {
     this(title, "", -1)
   }
