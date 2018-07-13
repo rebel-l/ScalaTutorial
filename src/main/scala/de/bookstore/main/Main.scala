@@ -27,5 +27,23 @@ object Main {
 
     val books = List(book0, book1, book2, book3)
     println(Lib.findAvailable(books))
+
+
+
+    val libOnline1 = new LibraryOnline()
+    var oBook1 = new libOnline1.OnlineBook("The neophytes guide to Scala", "Kaffeecoder", -1)
+    var oBook2 = new libOnline1.OnlineBook("Clean Code", "Uncle Bob", 3826655486L)
+
+    val libOnline2 = new LibraryOnline()
+    var oBook3 = new libOnline2.OnlineBook("The Pragmatic Programmer", "Andrew Hunt", 3446223096L)
+
+    val libDRM = new LibraryDRM()
+    var drmBook = new libDRM.DRMBook("Stufen", "Hermann Hesse", 3458357475L)
+
+    /*
+    oBook1 = drmBook // not possible
+    oBook1 = oBook2 // possible
+    oBook1 = oBook3 // not possible
+    */
   }
 }
