@@ -45,5 +45,13 @@ object Main {
     oBook1 = oBook2 // possible
     oBook1 = oBook3 // not possible
     */
+
+
+
+    val eIndex = new EBookIndex()
+    val bIndex = new BookIndex()
+
+    val glIndex = new GermanLyricIndex()
+    val aIIndex = new AIIndex()
   }
 }
