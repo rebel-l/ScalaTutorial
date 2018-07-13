@@ -23,8 +23,9 @@ object Main {
     val book0 = new Book("Clean Code", "Uncle Bob", 3826655486L)
     val book1 = new Book("Code Complete 2", "Steve McConnell", 735619670L, 0)
     val book2 = new Book("The Pragmatic Programmer", "Andrew Hunt", 3446223096L, 0)
+    val book3 = new EBook("Lord of the Rings", "J.R.R. Tolkien")
 
-    val books = List(Lib.PublicationBook(book0), Lib.PublicationBook(book1), Lib.PublicationBook(book2))
+    val books = List(book0, book1, book2, book3)
     println(Lib.findAvailable(books))
   }
 }
